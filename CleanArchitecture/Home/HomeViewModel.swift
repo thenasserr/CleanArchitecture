@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class ViewModel {
+class HomeViewModel {
     private let booksAPIService: DishesAPI
     private var subscriptions = Set<AnyCancellable>()
 
