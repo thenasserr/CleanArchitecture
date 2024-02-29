@@ -1,19 +1,19 @@
 //
 //  ViewController.swift
-//  CleanArchitecture
+//  Combine+Learn
 //
 //  Created by Ibrahim Nasser Ibrahim on 29/02/2024.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
+    let viewModel = ViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        viewModel.loadBooks()
     }
-
-
 }
 
