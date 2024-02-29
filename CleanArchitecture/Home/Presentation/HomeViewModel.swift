@@ -9,15 +9,15 @@ import Foundation
 import Combine
 
 class HomeViewModel {
-    private let booksAPIService: DishesAPI
+    private let dishesAPIService: DishesAPI
     private var subscriptions = Set<AnyCancellable>()
 
-    init(booksAPIService: DishesAPI = DishesAPIService()) {
-        self.booksAPIService = booksAPIService
+    init(dishesAPIService: DishesAPI = DishesAPIService()) {
+        self.dishesAPIService = dishesAPIService
     }
     
-    func loadBooks() {
-        booksAPIService.fetchBooks()
+    func getAllDishes() {
+        dishesAPIService.fetchDishes()
             .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
@@ -26,7 +26,7 @@ class HomeViewModel {
                 case .finished: break
                 }
             } receiveValue: { data in
-                print(data.data?.categories)
+                print(data.data)
             }.store(in: &subscriptions)
     }
 }
