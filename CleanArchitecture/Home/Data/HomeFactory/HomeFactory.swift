@@ -11,18 +11,18 @@ typealias HomeSectionsDelegate = PopularsSectionDelegate & CategoriesSectionDele
 
 class HomeFactory {
     
-    let delegate: HomeSectionsDelegate
-    init(delegate: HomeSectionsDelegate) {
-        self.delegate = delegate
-    }
+//    let delegate: HomeSectionsDelegate
+//    init(delegate: HomeSectionsDelegate) {
+//        self.delegate = delegate
+//    }
     
     func createSections(section: HomeType) -> any SectionsLayout {
         switch section {
                 
             case .categories(items: let items):
-                return CategoriesSection(items: items, delegate: delegate)
+                return CategoriesSection(items: items)
             case .populars(items: let items):
-                return PopularsSection(items: items, delegate: delegate)
+                return PopularsSection(items: items)
         }
     }
 }

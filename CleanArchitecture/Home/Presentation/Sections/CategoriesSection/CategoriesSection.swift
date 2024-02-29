@@ -17,9 +17,8 @@ class CategoriesSection: SectionsLayout {
             
      weak var delegate: CategoriesSectionDelegate?
     
-    init(items: [ItemsType], delegate: CategoriesSectionDelegate) {
+    init(items: [ItemsType]) {
         self.items = items
-        self.delegate = delegate
     }
     
     func numberOfItems() -> Int {

@@ -18,9 +18,8 @@ class PopularsSection: SectionsLayout {
         
     
      weak var delegate: PopularsSectionDelegate?
-    init(items: [ItemsType], delegate: PopularsSectionDelegate) {
+    init(items: [ItemsType]) {
         self.items = items
-        self.delegate = delegate
     }
     
     func numberOfItems() -> Int {
