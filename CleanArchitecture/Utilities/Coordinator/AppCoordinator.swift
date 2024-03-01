@@ -38,8 +38,12 @@ class AppCoordinator: AppCoordinatorProtocol {
     func showHome() {
         let factory = HomeFactory()
         let useCase = HomeUseCase(factory: factory)
-        let viewModel = HomeViewModel(useCase: useCase)
+        let viewModel = HomeViewModel(useCase: useCase, coordinator: self)
         let vc = HomeViewController(viewModel: viewModel)
         self.router.presentFullScreen(vc)
+    }
+    
+    func showDetails(dish: Dish) {
+        
     }
 }

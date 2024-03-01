@@ -37,6 +37,8 @@
 		D6C660142B91856900B7D5DA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660132B91856900B7D5DA /* Router.swift */; };
 		D6C660172B91860E00B7D5DA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660162B91860E00B7D5DA /* Coordinator.swift */; };
 		D6C660192B91864400B7D5DA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660182B91864400B7D5DA /* AppCoordinator.swift */; };
+		D6C6601D2B918D4D00B7D5DA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6601B2B918D4D00B7D5DA /* DetailsViewController.swift */; };
+		D6C6601E2B918D4D00B7D5DA /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C6601C2B918D4D00B7D5DA /* DetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		D6C660132B91856900B7D5DA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D6C660162B91860E00B7D5DA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D6C660182B91864400B7D5DA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D6C6601B2B918D4D00B7D5DA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		D6C6601C2B918D4D00B7D5DA /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				D6C65FDD2B90C03800B7D5DA /* Service */,
 				D6C65FD32B90C00400B7D5DA /* Networking */,
 				D6C65FD82B90C01A00B7D5DA /* Home */,
+				D6C6601A2B918CCB00B7D5DA /* Details */,
 				D6C65FDB2B90C02C00B7D5DA /* Utilities */,
 				D6C65FBD2B90BFE400B7D5DA /* AppDelegate.swift */,
 				D6C65FBF2B90BFE400B7D5DA /* SceneDelegate.swift */,
@@ -251,6 +256,15 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		D6C6601A2B918CCB00B7D5DA /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				D6C6601B2B918D4D00B7D5DA /* DetailsViewController.swift */,
+				D6C6601C2B918D4D00B7D5DA /* DetailsViewController.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,6 +328,7 @@
 				D6C660022B90C5E400B7D5DA /* DishPortraitCollectionViewCell.xib in Resources */,
 				D6C65FC72B90BFE600B7D5DA /* Assets.xcassets in Resources */,
 				D6C65FF12B90C16B00B7D5DA /* CategoriesCollectionViewCell.xib in Resources */,
+				D6C6601E2B918D4D00B7D5DA /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +350,7 @@
 				D6C65FE72B90C08C00B7D5DA /* EndPoint.swift in Sources */,
 				D6C660172B91860E00B7D5DA /* Coordinator.swift in Sources */,
 				D6C65FFC2B90C2B600B7D5DA /* UICollectionView+Ext.swift in Sources */,
+				D6C6601D2B918D4D00B7D5DA /* DetailsViewController.swift in Sources */,
 				D6C65FBE2B90BFE400B7D5DA /* AppDelegate.swift in Sources */,
 				D6C65FF02B90C16B00B7D5DA /* CategoriesCollectionViewCell.swift in Sources */,
 				D6C65FE12B90C03F00B7D5DA /* ResponseModel.swift in Sources */,
