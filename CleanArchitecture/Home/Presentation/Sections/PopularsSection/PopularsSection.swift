@@ -17,9 +17,10 @@ class PopularsSection: SectionsLayout {
     var items: [Dish] = []
         
     
-     weak var delegate: PopularsSectionDelegate?
-    init(items: [ItemsType]) {
+    let delegate: PopularsSectionDelegate
+    init(items: [ItemsType], delegate: PopularsSectionDelegate) {
         self.items = items
+        self.delegate = delegate
     }
     
     func numberOfItems() -> Int {
@@ -75,7 +76,7 @@ class PopularsSection: SectionsLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = items[indexPath.item]
-        delegate?.popularsSection(self, didSelect: item)
+        delegate.popularsSection(self, didSelect: item)
     }
     
     func collectionView(

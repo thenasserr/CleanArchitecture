@@ -8,11 +8,11 @@
 import Combine
 
 protocol DishesAPI: BaseAPI {
-    func fetchDishes() -> AnyPublisher<ResponseWrapper<AllDishes>, Error>
+    func fetchDishes() async throws -> ResponseWrapper<AllDishes>
 }
 
 struct DishesAPIService: DishesAPI {
-    func fetchDishes() -> AnyPublisher<ResponseWrapper<AllDishes>, Error> {
-        return fetch(endpoint: AllDishesEndpoint.fetchBooks, type: ResponseWrapper<AllDishes>.self)
+    func fetchDishes() async throws -> ResponseWrapper<AllDishes> {
+        try await fetch(endpoint: AllDishesEndpoint.fetchBooks, type: ResponseWrapper<AllDishes>.self)
     }
 }

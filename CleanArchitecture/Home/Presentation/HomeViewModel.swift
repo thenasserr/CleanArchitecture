@@ -8,25 +8,30 @@
 import Foundation
 import Combine
 
-class HomeViewModel {
-    private let dishesAPIService: DishesAPI
-    private var subscriptions = Set<AnyCancellable>()
+typealias HomeSectionsDelegate = PopularsSectionDelegate & CategoriesSectionDelegate
 
-    init(dishesAPIService: DishesAPI = DishesAPIService()) {
-        self.dishesAPIService = dishesAPIService
+
+class HomeViewModel {
+    
+    private var subscriptions = Set<AnyCancellable>()
+    private let useCase: HomeUseCase
+    
+    init(useCase: HomeUseCase) {
+        self.useCase = useCase
     }
     
-    func getAllDishes() {
-        dishesAPIService.fetchDishes()
-            .receive(on: RunLoop.main)
-            .sink { completion in
-                switch completion {
-                case let .failure(error):
-                    print("Couldn't get books: \(error)")
-                case .finished: break
-                }
-            } receiveValue: { data in
-                print(data.data)
-            }.store(in: &subscriptions)
+    func getSections() async throws -> [any SectionsLayout] {
+        return try await useCase.getSectionLayouts(delegate: self)
+    }
+}
+
+
+extension HomeViewModel: HomeSectionsDelegate  {
+    func popularsSection(_ section: PopularsSection, didSelect item: Dish) {
+        print(item)
+    }
+    
+    func categoriesSection(_ section: CategoriesSection, didSelect item: DishCategory) {
+        
     }
 }

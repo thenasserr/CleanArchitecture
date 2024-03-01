@@ -29,17 +29,32 @@ class HomeViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getAllDishes()
+         
+        Task {
+            do {
+                let sections = try await viewModel.getSections()
+                DispatchQueue.main.async {
+                    self.configureCollectionView(with: sections)
+                }
+            } catch {
+                self.show(error)
+            }
+        }
+    }
+    func show( _ error: Error) {
+        
     }
     
     // MARK: - UI Configuration
-    private func configureCollectionView() {
+    private func configureCollectionView(with sections: [any SectionsLayout]) {
+        self.sections = sections
         sections.forEach { section in
             section.registerCell(in: self.collectionView)
             section.registerSupplementaryView(in: self.collectionView)
         }
         collectionView.backgroundColor = .white
         collectionView.collectionViewLayout = createCompositionalLayout()
+        collectionView.reloadData()
     }
     
     // MARK: - Compositional Layout
@@ -67,5 +82,10 @@ class HomeViewController: UICollectionViewController {
                                  at indexPath: IndexPath) -> UICollectionReusableView {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        sections[indexPath.section].collectionView(collectionView, didSelectItemAt: indexPath)
+    }
 }
+
 

@@ -13,12 +13,13 @@ protocol CategoriesSectionDelegate: AnyObject {
 class CategoriesSection: SectionsLayout {
     typealias ItemsType = DishCategory
     
-    var items: [DishCategory] = []
+    var items: [ItemsType] = []
             
-     weak var delegate: CategoriesSectionDelegate?
+    let delegate: CategoriesSectionDelegate
     
-    init(items: [ItemsType]) {
+    init(items: [ItemsType], delegate: CategoriesSectionDelegate) {
         self.items = items
+        self.delegate = delegate
     }
     
     func numberOfItems() -> Int {
@@ -74,7 +75,7 @@ class CategoriesSection: SectionsLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = items[indexPath.item]
-        delegate?.categoriesSection(self, didSelect: item)
+        delegate.categoriesSection(self, didSelect: item)
     }
     
     func collectionView(

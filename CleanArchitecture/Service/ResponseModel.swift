@@ -14,9 +14,9 @@ struct Resaults: Codable {
 
 // MARK: - DataClass
 struct AllDishes: Codable {
-    let categories: [DishCategory]?
-    let populars: [Dish]?
-    let specials: [Dish]?
+    let categories: [DishCategory]
+    let populars: [Dish]
+    let specials: [Dish]
 }
 
 // MARK: - Dish Category
