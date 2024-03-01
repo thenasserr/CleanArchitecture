@@ -36,7 +36,7 @@ class PopularsSection: SectionsLayout {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .absolute(400))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(220), heightDimension: .absolute(380))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let header = createHeader()

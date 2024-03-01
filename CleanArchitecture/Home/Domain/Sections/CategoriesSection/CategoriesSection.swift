@@ -35,7 +35,7 @@ class CategoriesSection: SectionsLayout {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(150), heightDimension: .absolute(80))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(150), heightDimension: .absolute(70))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let header = createHeader()
