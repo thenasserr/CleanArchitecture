@@ -13,13 +13,17 @@ protocol HomeUseCaseProtocol {
 
 class HomeUseCase: HomeUseCaseProtocol {
 
+    // MARK: - Properties
     private let dishesAPIService: DishesAPI
     private let factory: HomeFactory
+    
+    // MARK: - Initialization
     init(dishesAPIService: DishesAPI = DishesAPIService(), factory: HomeFactory) {
         self.dishesAPIService = dishesAPIService
         self.factory = factory
     }
-        
+    
+    
     func getSectionLayouts(delegate: HomeSectionsDelegate) async throws -> [any SectionsLayout] {
         let dishes = try await dishesAPIService.fetchDishes()
         var sections: [any SectionsLayout] = []

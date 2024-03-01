@@ -75,14 +75,14 @@
                 <outlet property="containerView" destination="6bN-R7-Vcw" id="Bv2-wu-GTY"/>
                 <outlet property="descriptionLabel" destination="rxo-oy-RNm" id="2gj-nD-YbK"/>
                 <outlet property="dishImageView" destination="rM2-AE-tvO" id="bpR-Fk-n59"/>
-                <outlet property="titleLable" destination="vzJ-SN-vTQ" id="a7s-1f-vw3"/>
+                <outlet property="titleLabel" destination="vzJ-SN-vTQ" id="a7s-1f-vw3"/>
             </connections>
             <point key="canvasLocation" x="314.50381679389312" y="39.436619718309863"/>
         </collectionViewCell>
     </objects>
     <resources>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

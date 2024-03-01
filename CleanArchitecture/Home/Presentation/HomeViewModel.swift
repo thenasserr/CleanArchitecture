@@ -6,17 +6,16 @@
 //
 
 import Foundation
-import Combine
 
 typealias HomeSectionsDelegate = PopularsSectionDelegate & CategoriesSectionDelegate & SpecialsSectionDelegate
 
-
 class HomeViewModel {
     
-    private var subscriptions = Set<AnyCancellable>()
+    // MARK: - Properties
     private let useCase: HomeUseCase
     private var coordinator: AppCoordinator
     
+    //MARK: - Initialization
     init(useCase: HomeUseCase, coordinator: AppCoordinator) {
         self.useCase = useCase
         self.coordinator = coordinator
@@ -27,7 +26,7 @@ class HomeViewModel {
     }
 }
 
-
+// MARK: - HomeViewModel Sections Delegate Methods
 extension HomeViewModel: HomeSectionsDelegate  {
     func specialsSection(_ section: SpecialsSection, didSelect item: Dish) {
         print(item)

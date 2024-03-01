@@ -23,16 +23,15 @@ class AppCoordinator: AppCoordinatorProtocol {
         router = AppRouter.init(navigationController: .init())
     }
     
+    func start() {
+        showHome()
+    }
+    
     func makeWindow(from windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = self.router.navigationController
         window.makeKeyAndVisible()
         self.window = window
-    }
-    
-    
-    func start() {
-        showHome()
     }
     
     func showHome() {

@@ -95,6 +95,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D6724D8B2B921CFF00FC6AF7 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				D6C65FF52B90C24000B7D5DA /* SupplementaryView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		D6724D8C2B921D1600FC6AF7 /* SectionsLayoutProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				D6C65FDC2B90C02C00B7D5DA /* SectionsLayout.swift */,
+			);
+			path = SectionsLayoutProtocol;
+			sourceTree = "<group>";
+		};
 		D6C65FB12B90BFE400B7D5DA = {
 			isa = PBXGroup;
 			children = (
@@ -118,9 +134,9 @@
 				D6C65FD32B90C00400B7D5DA /* Networking */,
 				D6C65FD82B90C01A00B7D5DA /* Home */,
 				D6C6601A2B918CCB00B7D5DA /* Details */,
-				D6C65FDB2B90C02C00B7D5DA /* Utilities */,
 				D6C65FBD2B90BFE400B7D5DA /* AppDelegate.swift */,
 				D6C65FBF2B90BFE400B7D5DA /* SceneDelegate.swift */,
+				D6C65FDB2B90C02C00B7D5DA /* Utilities */,
 				D6C65FC62B90BFE600B7D5DA /* Assets.xcassets */,
 				D6C65FC82B90BFE600B7D5DA /* LaunchScreen.storyboard */,
 				D6C65FCB2B90BFE600B7D5DA /* Info.plist */,
@@ -155,8 +171,8 @@
 				D6C660152B9185F200B7D5DA /* Coordinator */,
 				D6C660102B91855200B7D5DA /* Router */,
 				D6C65FFA2B90C2A300B7D5DA /* Extensions */,
-				D6C65FF52B90C24000B7D5DA /* SupplementaryView */,
-				D6C65FDC2B90C02C00B7D5DA /* SectionsLayout.swift */,
+				D6724D8B2B921CFF00FC6AF7 /* CustomViews */,
+				D6724D8C2B921D1600FC6AF7 /* SectionsLayoutProtocol */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

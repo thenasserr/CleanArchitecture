@@ -6,18 +6,14 @@
 //
 
 import UIKit
-import Combine
 
 class HomeViewController: UICollectionViewController {
 
+    // MARK: - Properties
     var sections: [any SectionsLayout] = []
-
     var viewModel: HomeViewModel
-    
-    private var cancellable: Set<AnyCancellable> = []
-    
+        
     // MARK: - Initializers
-    //
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(collectionViewLayout: .init())
@@ -27,9 +23,14 @@ class HomeViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-         
+        getSections()
+    }
+    
+    // MARK: - Private Methods
+    private func getSections() {
         Task {
             do {
                 let sections = try await viewModel.getSections()
@@ -41,8 +42,9 @@ class HomeViewController: UICollectionViewController {
             }
         }
     }
-    func show( _ error: Error) {
-        
+    
+    private func show( _ error: Error) {
+        print(error)
     }
     
     // MARK: - UI Configuration
@@ -87,5 +89,3 @@ class HomeViewController: UICollectionViewController {
         sections[indexPath.section].collectionView(collectionView, didSelectItemAt: indexPath)
     }
 }
-
-

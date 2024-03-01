@@ -12,24 +12,21 @@ class SpecialsCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var dishImageView: UIImageView!
-    @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
     
+    // MARK: - LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
     }
     
     // MARK: - Setup Method
-    
-    /// Configure the cell with the provided dish information.
-    ///
-    /// - Parameter dish: The Dish model to display in the cell.
     func setup(dish: Dish) {
         let imageURL = dish.image
         dishImageView.load(urlString: imageURL ?? "")
-        titleLable.text = dish.name
+        titleLabel.text = dish.name
         descriptionLabel.text = dish.description
         caloriesLabel.text = dish.formattedCalories
     }

@@ -8,16 +8,19 @@
 import UIKit
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
-
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
     
+    // MARK: - LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
     }
-
+    
+    // MARK: - Setup Method
     func setup(categories: DishCategory) {
         categoryName.text = categories.name
         let imageURL = categories.image

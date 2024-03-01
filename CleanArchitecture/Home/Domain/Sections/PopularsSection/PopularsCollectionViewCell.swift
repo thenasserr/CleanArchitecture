@@ -17,7 +17,6 @@ class PopularsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     // MARK: - Lifecycle Methods
-    //
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
