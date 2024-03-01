@@ -11,23 +11,6 @@ protocol HomeUseCaseProtocol {
     func getSectionLayouts(delegate: HomeSectionsDelegate) async throws -> [any SectionsLayout]
 }
 
-enum SectionsTypes {
-    case categories([DishCategory])
-    case pupolars([Dish])
-}
-
-class HomeFactory {
-    func createSection(type: SectionsTypes, delegate: HomeSectionsDelegate) -> any SectionsLayout {
-        switch type {
-            case .categories(let categories):
-                return CategoriesSection(items: categories, delegate: delegate)
-            case .pupolars(let items):
-                return PopularsSection(items: items, delegate: delegate)
-        }
-    }
-    
-}
-
 class HomeUseCase: HomeUseCaseProtocol {
 
     private let dishesAPIService: DishesAPI
@@ -47,7 +30,7 @@ class HomeUseCase: HomeUseCaseProtocol {
         }
         
         if let popular = dishes.data?.populars {
-            let layout = factory.createSection(type: .pupolars(popular), delegate: delegate)
+            let layout = factory.createSection(type: .populars(popular), delegate: delegate)
             sections.append(layout)
         }
         
