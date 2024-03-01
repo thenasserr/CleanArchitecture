@@ -35,6 +35,8 @@
 		D6C6600F2B916E5900B7D5DA /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6600E2B916E5900B7D5DA /* UIImageView+Ext.swift */; };
 		D6C660122B91856300B7D5DA /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660112B91856300B7D5DA /* AppRouter.swift */; };
 		D6C660142B91856900B7D5DA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660132B91856900B7D5DA /* Router.swift */; };
+		D6C660172B91860E00B7D5DA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660162B91860E00B7D5DA /* Coordinator.swift */; };
+		D6C660192B91864400B7D5DA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660182B91864400B7D5DA /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		D6C6600E2B916E5900B7D5DA /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		D6C660112B91856300B7D5DA /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		D6C660132B91856900B7D5DA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D6C660162B91860E00B7D5DA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D6C660182B91864400B7D5DA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		D6C65FDB2B90C02C00B7D5DA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D6C660152B9185F200B7D5DA /* Coordinator */,
 				D6C660102B91855200B7D5DA /* Router */,
 				D6C65FFA2B90C2A300B7D5DA /* Extensions */,
 				D6C65FF52B90C24000B7D5DA /* SupplementaryView */,
@@ -237,6 +242,15 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		D6C660152B9185F200B7D5DA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D6C660162B91860E00B7D5DA /* Coordinator.swift */,
+				D6C660182B91864400B7D5DA /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,12 +326,14 @@
 			files = (
 				D6C65FE82B90C08F00B7D5DA /* HomeViewModel.swift in Sources */,
 				D6C65FE62B90C08A00B7D5DA /* ResponseWrapper.swift in Sources */,
+				D6C660192B91864400B7D5DA /* AppCoordinator.swift in Sources */,
 				D6C65FE22B90C03F00B7D5DA /* AllDishesEndPoint.swift in Sources */,
 				D6C65FF22B90C1BA00B7D5DA /* SectionsLayout.swift in Sources */,
 				D6C660052B90C6B600B7D5DA /* HomeFactory.swift in Sources */,
 				D6C65FE32B90C03F00B7D5DA /* DishesAPI.swift in Sources */,
 				D6C6600F2B916E5900B7D5DA /* UIImageView+Ext.swift in Sources */,
 				D6C65FE72B90C08C00B7D5DA /* EndPoint.swift in Sources */,
+				D6C660172B91860E00B7D5DA /* Coordinator.swift in Sources */,
 				D6C65FFC2B90C2B600B7D5DA /* UICollectionView+Ext.swift in Sources */,
 				D6C65FBE2B90BFE400B7D5DA /* AppDelegate.swift in Sources */,
 				D6C65FF02B90C16B00B7D5DA /* CategoriesCollectionViewCell.swift in Sources */,
