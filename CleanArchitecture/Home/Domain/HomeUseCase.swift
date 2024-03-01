@@ -11,12 +11,30 @@ protocol HomeUseCaseProtocol {
     func getSectionLayouts(delegate: HomeSectionsDelegate) async throws -> [any SectionsLayout]
 }
 
+enum SectionsTypes {
+    case categories([DishCategory])
+    case pupolars([Dish])
+}
+
+class HomeFactory {
+    func createSection(type: SectionsTypes, delegate: HomeSectionsDelegate) -> any SectionsLayout {
+        switch type {
+            case .categories(let categories):
+                return CategoriesSection(items: categories, delegate: delegate)
+            case .pupolars(let items):
+                return PopularsSection(items: items, delegate: delegate)
+        }
+    }
+    
+}
+
 class HomeUseCase: HomeUseCaseProtocol {
 
     private let dishesAPIService: DishesAPI
-
-    init(dishesAPIService: DishesAPI = DishesAPIService()) {
+    private let factory: HomeFactory
+    init(dishesAPIService: DishesAPI = DishesAPIService(), factory: HomeFactory) {
         self.dishesAPIService = dishesAPIService
+        self.factory = factory
     }
         
     func getSectionLayouts(delegate: HomeSectionsDelegate) async throws -> [any SectionsLayout] {
@@ -24,22 +42,16 @@ class HomeUseCase: HomeUseCaseProtocol {
         var sections: [any SectionsLayout] = []
         
         if let categories = dishes.data?.categories {
-            sections.append(createCategoriesSection(form: categories, delegate: delegate))
+            let layout = factory.createSection(type: .categories(categories), delegate: delegate)
+            sections.append(layout)
         }
         
         if let popular = dishes.data?.populars {
-            sections.append(createPopularsSection(form: popular, delegate: delegate))
+            let layout = factory.createSection(type: .pupolars(popular), delegate: delegate)
+            sections.append(layout)
         }
         
         return sections
-    }
-    
-    func createCategoriesSection(form categories: [DishCategory], delegate: CategoriesSectionDelegate) -> any SectionsLayout {
-        return CategoriesSection(items: categories, delegate: delegate)
-    }
-    
-    func createPopularsSection(form items: [Dish], delegate: PopularsSectionDelegate) -> any SectionsLayout {
-        return PopularsSection(items: items, delegate: delegate)
     }
 }
 

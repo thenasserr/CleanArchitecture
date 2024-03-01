@@ -32,6 +32,6 @@ extension HomeViewModel: HomeSectionsDelegate  {
     }
     
     func categoriesSection(_ section: CategoriesSection, didSelect item: DishCategory) {
-        
+        print(item)
     }
 }

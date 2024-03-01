@@ -197,7 +197,6 @@
 		D6C660092B90CA0E00B7D5DA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D6C65FEA2B90C10E00B7D5DA /* Sections */,
 				D6C65FD92B90C01A00B7D5DA /* HomeViewModel.swift */,
 				D6C65FDA2B90C01A00B7D5DA /* HomeViewController.swift */,
 			);
@@ -207,6 +206,7 @@
 		D6C6600A2B90CA2100B7D5DA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D6C65FEA2B90C10E00B7D5DA /* Sections */,
 				D6C6600C2B90CA4C00B7D5DA /* HomeUseCase.swift */,
 			);
 			path = Domain;
