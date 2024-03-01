@@ -33,6 +33,8 @@
 		D6C660052B90C6B600B7D5DA /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660042B90C6B600B7D5DA /* HomeFactory.swift */; };
 		D6C6600D2B90CA4C00B7D5DA /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6600C2B90CA4C00B7D5DA /* HomeUseCase.swift */; };
 		D6C6600F2B916E5900B7D5DA /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6600E2B916E5900B7D5DA /* UIImageView+Ext.swift */; };
+		D6C660122B91856300B7D5DA /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660112B91856300B7D5DA /* AppRouter.swift */; };
+		D6C660142B91856900B7D5DA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660132B91856900B7D5DA /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		D6C660042B90C6B600B7D5DA /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		D6C6600C2B90CA4C00B7D5DA /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		D6C6600E2B916E5900B7D5DA /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		D6C660112B91856300B7D5DA /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		D6C660132B91856900B7D5DA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 		D6C65FDB2B90C02C00B7D5DA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D6C660102B91855200B7D5DA /* Router */,
 				D6C65FFA2B90C2A300B7D5DA /* Extensions */,
 				D6C65FF52B90C24000B7D5DA /* SupplementaryView */,
 				D6C65FDC2B90C02C00B7D5DA /* SectionsLayout.swift */,
@@ -221,6 +226,15 @@
 				D6C660042B90C6B600B7D5DA /* HomeFactory.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		D6C660102B91855200B7D5DA /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D6C660112B91856300B7D5DA /* AppRouter.swift */,
+				D6C660132B91856900B7D5DA /* Router.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,8 +326,10 @@
 				D6C65FFF2B90C4FA00B7D5DA /* PopularsSection.swift in Sources */,
 				D6C65FE42B90C08500B7D5DA /* HTTPRequestMethod.swift in Sources */,
 				D6C6600D2B90CA4C00B7D5DA /* HomeUseCase.swift in Sources */,
+				D6C660142B91856900B7D5DA /* Router.swift in Sources */,
 				D6C65FEC2B90C11D00B7D5DA /* CategoriesSection.swift in Sources */,
 				D6C65FC02B90BFE400B7D5DA /* SceneDelegate.swift in Sources */,
+				D6C660122B91856300B7D5DA /* AppRouter.swift in Sources */,
 				D6C65FF92B90C24600B7D5DA /* HeaderCollectionReusableView.swift in Sources */,
 				D6C65FE52B90C08700B7D5DA /* BaseAPI.swift in Sources */,
 				D6C660032B90C5E400B7D5DA /* DishPortraitCollectionViewCell.swift in Sources */,
