@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-typealias HomeSectionsDelegate = PopularsSectionDelegate & CategoriesSectionDelegate
+typealias HomeSectionsDelegate = PopularsSectionDelegate & CategoriesSectionDelegate & SpecialsSectionDelegate
 
 
 class HomeViewModel {
@@ -29,6 +29,11 @@ class HomeViewModel {
 
 
 extension HomeViewModel: HomeSectionsDelegate  {
+    func specialsSection(_ section: SpecialsSection, didSelect item: Dish) {
+        print(item)
+        coordinator.showDetails(dish: item)
+    }
+    
     func popularsSection(_ section: PopularsSection, didSelect item: Dish) {
         print(item)
         coordinator.showDetails(dish: item)

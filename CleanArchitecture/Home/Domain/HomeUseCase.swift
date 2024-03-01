@@ -34,6 +34,11 @@ class HomeUseCase: HomeUseCaseProtocol {
             sections.append(layout)
         }
         
+        if let specials = dishes.data?.specials {
+            let layout = factory.createSection(type: .specials(specials), delegate: delegate)
+            sections.append(layout)
+        }
+        
         return sections
     }
 }

@@ -1,24 +1,24 @@
 //
-//  PopularsSection.swift
+//  SpecialsSection.swift
 //  CleanArchitecture
 //
-//  Created by Ibrahim Nasser Ibrahim on 29/02/2024.
+//  Created by Ibrahim Nasser Ibrahim on 01/03/2024.
 //
 
 import UIKit
 
-protocol PopularsSectionDelegate: AnyObject {
-    func popularsSection(_ section: PopularsSection, didSelect item: Dish)
+protocol SpecialsSectionDelegate: AnyObject {
+    func specialsSection(_ section: SpecialsSection, didSelect item: Dish)
 }
 
-class PopularsSection: SectionsLayout {
+class SpecialsSection: SectionsLayout {
     typealias ItemsType = Dish
     
     var items: [Dish] = []
         
+    weak var delegate: SpecialsSectionDelegate?
     
-    let delegate: PopularsSectionDelegate
-    init(items: [ItemsType], delegate: PopularsSectionDelegate) {
+    init(items: [ItemsType], delegate: SpecialsSectionDelegate) {
         self.items = items
         self.delegate = delegate
     }
@@ -36,14 +36,14 @@ class PopularsSection: SectionsLayout {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(220), heightDimension: .absolute(380))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(100))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let header = createHeader()
 
         // Section
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 6
+        section.interGroupSpacing = 15
         section.contentInsets = .init(top: 0, leading: 20, bottom: 20, trailing: 20)
         section.boundarySupplementaryItems = [header]
         section.orthogonalScrollingBehavior = .groupPaging
@@ -67,7 +67,7 @@ class PopularsSection: SectionsLayout {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard let cell: PopularsCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+        guard let cell: SpecialsCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             return UICollectionViewCell()
         }
         cell.setup(dish: items[indexPath.row])
@@ -76,7 +76,7 @@ class PopularsSection: SectionsLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = items[indexPath.item]
-        delegate.popularsSection(self, didSelect: item)
+        delegate?.specialsSection(self, didSelect: item)
     }
     
     func collectionView(
@@ -91,12 +91,12 @@ class PopularsSection: SectionsLayout {
         ) as? HeaderCollectionReusableView else {
             return UICollectionReusableView()
         }
-        header.setupHeaderTitle(title: "Populars")
+        header.setupHeaderTitle(title: "Chef's Specials")
         return header
     }
     
     func registerCell(in collectionView: UICollectionView) {
-        collectionView.registerNib(PopularsCollectionViewCell.self)
+        collectionView.registerNib(SpecialsCollectionViewCell.self)
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {

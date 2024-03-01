@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DishPortraitCollectionViewCell: UICollectionViewCell {
+class PopularsCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlets
     @IBOutlet weak var containerView: UIStackView!

@@ -10,6 +10,7 @@ import Foundation
 enum SectionsTypes {
     case categories([DishCategory])
     case populars([Dish])
+    case specials([Dish])
 }
 
 class HomeFactory {
@@ -19,6 +20,8 @@ class HomeFactory {
                 return CategoriesSection(items: categories, delegate: delegate)
             case .populars(let items):
                 return PopularsSection(items: items, delegate: delegate)
+            case .specials(let specials):
+                return SpecialsSection(items: specials, delegate: delegate)
         }
     }
     
