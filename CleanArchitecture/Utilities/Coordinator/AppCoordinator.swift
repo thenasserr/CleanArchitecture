@@ -44,6 +44,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func showDetails(dish: Dish) {
-        
+        let vc = DetailsViewController(dish: dish)
+        router.push(vc)
     }
 }
