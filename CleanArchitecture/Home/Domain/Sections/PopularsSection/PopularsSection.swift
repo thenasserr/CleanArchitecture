@@ -44,7 +44,7 @@ class PopularsSection: SectionsLayout {
         // Section
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 6
-        section.contentInsets.bottom = 25
+        section.contentInsets = .init(top: 0, leading: 20, bottom: 20, trailing: 20)
         section.boundarySupplementaryItems = [header]
         section.orthogonalScrollingBehavior = .groupPaging
         return section

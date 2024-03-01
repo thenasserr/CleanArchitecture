@@ -32,6 +32,7 @@
 		D6C660032B90C5E400B7D5DA /* DishPortraitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660012B90C5E400B7D5DA /* DishPortraitCollectionViewCell.swift */; };
 		D6C660052B90C6B600B7D5DA /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C660042B90C6B600B7D5DA /* HomeFactory.swift */; };
 		D6C6600D2B90CA4C00B7D5DA /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6600C2B90CA4C00B7D5DA /* HomeUseCase.swift */; };
+		D6C6600F2B916E5900B7D5DA /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6600E2B916E5900B7D5DA /* UIImageView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		D6C660012B90C5E400B7D5DA /* DishPortraitCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishPortraitCollectionViewCell.swift; sourceTree = "<group>"; };
 		D6C660042B90C6B600B7D5DA /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		D6C6600C2B90CA4C00B7D5DA /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
+		D6C6600E2B916E5900B7D5DA /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D6C65FFB2B90C2B600B7D5DA /* UICollectionView+Ext.swift */,
+				D6C6600E2B916E5900B7D5DA /* UIImageView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				D6C65FF22B90C1BA00B7D5DA /* SectionsLayout.swift in Sources */,
 				D6C660052B90C6B600B7D5DA /* HomeFactory.swift in Sources */,
 				D6C65FE32B90C03F00B7D5DA /* DishesAPI.swift in Sources */,
+				D6C6600F2B916E5900B7D5DA /* UIImageView+Ext.swift in Sources */,
 				D6C65FE72B90C08C00B7D5DA /* EndPoint.swift in Sources */,
 				D6C65FFC2B90C2B600B7D5DA /* UICollectionView+Ext.swift in Sources */,
 				D6C65FBE2B90BFE400B7D5DA /* AppDelegate.swift in Sources */,

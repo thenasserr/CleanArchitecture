@@ -17,7 +17,8 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
 
     func setup(categories: DishCategory) {
-        categoryImage.image = UIImage(named: categories.image ?? "")
         categoryName.text = categories.name
+        let imageURL = categories.image
+        categoryImage.load(urlString: imageURL ?? "")
     }
 }

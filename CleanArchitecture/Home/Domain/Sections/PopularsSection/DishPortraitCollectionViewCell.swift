@@ -28,5 +28,7 @@ class DishPortraitCollectionViewCell: UICollectionViewCell {
          titleLabel.text = dish.name
          caloriesLabel.text = dish.formattedCalories
          descriptionLabel.text = dish.description
+         let imageURL = dish.image
+         dishImageView.load(urlString: imageURL ?? "")
      }
  }

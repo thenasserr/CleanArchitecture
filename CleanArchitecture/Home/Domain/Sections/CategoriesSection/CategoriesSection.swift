@@ -35,7 +35,7 @@ class CategoriesSection: SectionsLayout {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(80), heightDimension: .absolute(30))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(150), heightDimension: .absolute(80))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let header = createHeader()
@@ -43,7 +43,7 @@ class CategoriesSection: SectionsLayout {
         // Section
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 6
-        section.contentInsets.bottom = 25
+        section.contentInsets = .init(top: 0, leading: 20, bottom: 20, trailing: 20)
         section.boundarySupplementaryItems = [header]
         section.orthogonalScrollingBehavior = .groupPaging
         return section
