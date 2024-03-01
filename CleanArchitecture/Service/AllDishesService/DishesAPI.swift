@@ -13,6 +13,6 @@ protocol DishesAPI: BaseAPI {
 
 struct DishesAPIService: DishesAPI {
     func fetchDishes() async throws -> ResponseWrapper<AllDishes> {
-        try await fetch(endpoint: AllDishesEndpoint.fetchBooks, type: ResponseWrapper<AllDishes>.self)
+        try await fetch(endpoint: AllDishesEndpoint.fetchDishes, type: ResponseWrapper<AllDishes>.self)
     }
 }

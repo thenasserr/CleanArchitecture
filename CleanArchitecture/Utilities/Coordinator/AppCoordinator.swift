@@ -39,11 +39,19 @@ class AppCoordinator: AppCoordinatorProtocol {
         let useCase = HomeUseCase(factory: factory)
         let viewModel = HomeViewModel(useCase: useCase, coordinator: self)
         let vc = HomeViewController(viewModel: viewModel)
-        self.router.presentFullScreen(vc)
+        self.router.push(vc)
     }
     
     func showDetails(dish: Dish) {
         let vc = DetailsViewController(dish: dish)
+        router.push(vc)
+    }
+    
+    func showList(id: String) {
+        let factory = ListFactory()
+        let useCase = ListUseCase(factory: factory)
+        let viewModel = ListDishesViewModel(useCase: useCase)
+        let vc = ListDishesViewController(viewModel: viewModel)
         router.push(vc)
     }
 }

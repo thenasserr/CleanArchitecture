@@ -8,11 +8,12 @@
 import Foundation
 
 enum AllDishesEndpoint {
-    case fetchBooks
+    case fetchDishes
+    case getDishes(String)
     
     struct Constants {
         static let baseUrl = "https://yummie.glitch.me"
-        static let booksAPI = "/dish-categories"
+        static let allDishesAPI = "/dish-categories"
     }
 }
 
@@ -24,22 +25,28 @@ extension AllDishesEndpoint: Endpoint {
     
     var path: String {
         switch self {
-        case .fetchBooks:
-            return Constants.booksAPI
+            case .fetchDishes:
+                return Constants.allDishesAPI
+            case .getDishes(let id):
+                return "/dishes/\(id)"
         }
     }
     
     var method: HTTPRequestMethod {
         switch self {
-        case .fetchBooks:
-            return .get
+            case .fetchDishes:
+                return .get
+            case .getDishes:
+                return .get
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .fetchBooks:
-            return nil
+            case .fetchDishes:
+                return nil
+            case .getDishes:
+                return nil
         }
     }
 }

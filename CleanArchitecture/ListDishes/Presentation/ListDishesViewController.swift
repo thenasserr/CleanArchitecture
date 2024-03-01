@@ -1,20 +1,19 @@
 //
-//  ViewController.swift
-//  Combine+Learn
+//  ListDishesViewController.swift
+//  CleanArchitecture
 //
-//  Created by Ibrahim Nasser Ibrahim on 29/02/2024.
+//  Created by Ibrahim Nasser Ibrahim on 01/03/2024.
 //
 
 import UIKit
 
-class HomeViewController: UICollectionViewController {
-
+class ListDishesViewController: UICollectionViewController {
     // MARK: - Properties
     var sections: [any SectionsLayout] = []
-    var viewModel: HomeViewModel
+    var viewModel: ListDishesViewModel
         
     // MARK: - Initializers
-    init(viewModel: HomeViewModel) {
+    init(viewModel: ListDishesViewModel) {
         self.viewModel = viewModel
         super.init(collectionViewLayout: .init())
     }
@@ -23,10 +22,8 @@ class HomeViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
         getSections()
     }
     
@@ -47,7 +44,7 @@ class HomeViewController: UICollectionViewController {
     private func show( _ error: Error) {
         print(error)
     }
-    
+
     // MARK: - UI Configuration
     private func configureCollectionView(with sections: [any SectionsLayout]) {
         self.sections = sections
